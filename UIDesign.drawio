@@ -1,0 +1,22 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Page-1" id="3Abta78FGkjsN3vA0cYu">
+    <mxGraphModel dx="683" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_500rBJrknvx4pYCXwTb-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="130" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="_500rBJrknvx4pYCXwTb-5" value="Folder Path Input Here..." style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeWidth=1;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=10;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_500rBJrknvx4pYCXwTb-8" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Get Folder Button&lt;/font&gt;" style="rounded=1;fillColor=#5D5A5D;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="170" width="96" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_500rBJrknvx4pYCXwTb-9" value="Output Area" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="480" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
