@@ -11,7 +11,8 @@
 
 ---
 
-### Note: Put the executable file inside the folder you want to work in.
+### Note: Put the executable file inside the folder you want to work in. 
+#### Currently, this only works with image file types.
 
 # Instructions:
 
