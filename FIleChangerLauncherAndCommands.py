@@ -1,13 +1,23 @@
+# Name: Rusho Binnabi
+# Date: 6/11/2025
+# Project: FileChanger - Launcher and Commands
+# Contact Information: RushoBinnabi123@yahoo.com
+
 from tkinter.filedialog import askdirectory
 import os
 
 import FileChangerGUI
 import tkinter
 
+# this FileChangerLauncherAndCommands file has all the code needed for the program to function.
+
 folderPath = ""
 oldFileExtension = ""
 newFileExtension = ""
 fileNameAndExtension = ""
+
+# this def getFoldersButtonFunctionality() function gets the folder path of the files
+# when the appropriate button is clicked.
 
 def getFoldersButtonFunctionality():
     tkinter.Tk().withdraw()
@@ -15,6 +25,9 @@ def getFoldersButtonFunctionality():
     FileChangerGUI.folderLocationInputSource.config(state=tkinter.NORMAL)
     FileChangerGUI.folderLocationInputSource.insert(tkinter.END, fn)
     FileChangerGUI.folderLocationInputSource.config(state=tkinter.DISABLED)
+
+# this changeFileExtensionsButtonFunctionality() function changes the file extensions of the list of files
+# from the folder gotten from the getFoldersButtonFunctionality() function when the appropriate button is clicked.
 
 def changeFileExtensionsButtonFunctionality():
     folderPath = FileChangerGUI.folderLocationInputSource.get()
@@ -30,6 +43,8 @@ def changeFileExtensionsButtonFunctionality():
         FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension + "\n")
     FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.DISABLED)
     FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.DISABLED)
+
+# this clearUIButtonFunctionality() function clears the UI when the appropriate button is clicked.
 
 def clearUIButtonFunctionality():
     FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.NORMAL)

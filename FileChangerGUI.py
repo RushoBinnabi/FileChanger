@@ -1,6 +1,13 @@
+# Name: Rusho Binnabi
+# Date: 6/11/2025
+# Project: FileChanger - GUI
+# Contact Information: RushoBinnabi123@yahoo.com
+
 import tkinter
 from tkinter import scrolledtext
 import FIleChangerLauncherAndCommands
+
+# this FileChangerGUI file has all the code needed for the GUI setup.
 
 mainWindow = tkinter.Tk()
 mainWindow.title("File Changer")
