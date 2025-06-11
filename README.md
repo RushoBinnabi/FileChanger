@@ -11,6 +11,8 @@
 
 ---
 
+### Note: Put the executable file inside the folder you want to work in.
+
 # Instructions:
 
 **1: Download the latest release from the right side.**
