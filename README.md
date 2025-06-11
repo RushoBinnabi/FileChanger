@@ -24,8 +24,10 @@
 
 **4: To change the file extensions:**
 
-- **Enter Old File Extension:** Enter the file extension of the files from the folder that you'd like to change from.
-- **Enter New File Extension:** Enter the file extension of the files from the folder that you'd like to change to.
+- **Enter Old File Extension:** Enter the file extension (ex: jpg, png, etc.) of the files from the folder that you'd like to change from.
+- **Enter New File Extension:** Enter the file extension (ex: jpg, png, etc.) of the files from the folder that you'd like to change to.
+
+**Note: The program will automatically add the . for the file extension. You don't need to do it.**
 
 **5: Press the Change File Extensions button to change the file extensions.**
 

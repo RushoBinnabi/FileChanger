@@ -37,10 +37,10 @@ def changeFileExtensionsButtonFunctionality():
     FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.NORMAL)
     for file in os.listdir(folderPath):
         fileNameAndExtension = os.path.splitext(file)
-        if fileNameAndExtension[1] == oldFileExtension:
-            os.rename(fileNameAndExtension[0] + oldFileExtension, fileNameAndExtension[0] + newFileExtension)
-        FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension + "\n")
-        FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension + "\n")
+        if fileNameAndExtension[1] == oldFileExtension.replace(oldFileExtension, "." + oldFileExtension):
+            os.rename(fileNameAndExtension[0] + oldFileExtension.replace(oldFileExtension, "." + oldFileExtension), fileNameAndExtension[0] + newFileExtension.replace(newFileExtension, "." + newFileExtension))
+        FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension.replace(oldFileExtension, "." + oldFileExtension) + "\n")
+        FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension.replace(newFileExtension, "." + newFileExtension) + "\n")
     FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.DISABLED)
     FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.DISABLED)
 
