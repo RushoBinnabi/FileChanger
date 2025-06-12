@@ -15,6 +15,7 @@ folderPath = ""
 oldFileExtension = ""
 newFileExtension = ""
 fileNameAndExtension = ""
+fileTypes = [".jpg", ".png", ".webp", ".htm"]
 
 # this def getFoldersButtonFunctionality() function gets the folder path of the files
 # when the appropriate button is clicked.
@@ -31,18 +32,24 @@ def getFoldersButtonFunctionality():
 
 def changeFileExtensionsButtonFunctionality():
     folderPath = FileChangerGUI.folderLocationInputSource.get()
-    oldFileExtension = FileChangerGUI.oldFileExtensionInput.get()
-    newFileExtension = FileChangerGUI.newFileExtensionInput.get()
+    oldFileExtension = "." + FileChangerGUI.oldFileExtensionInput.get()
+    newFileExtension = "." + FileChangerGUI.newFileExtensionInput.get()
     FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.NORMAL)
     FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.NORMAL)
     for file in os.listdir(folderPath):
         fileNameAndExtension = os.path.splitext(file)
-        if fileNameAndExtension[1] == oldFileExtension.replace(oldFileExtension, "." + oldFileExtension):
-            os.rename(fileNameAndExtension[0] + oldFileExtension.replace(oldFileExtension, "." + oldFileExtension), fileNameAndExtension[0] + newFileExtension.replace(newFileExtension, "." + newFileExtension))
-        FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension.replace(oldFileExtension, "." + oldFileExtension) + "\n")
-        FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension.replace(newFileExtension, "." + newFileExtension) + "\n")
-    FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.DISABLED)
-    FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.DISABLED)
+        for fileType in fileTypes:
+            if fileNameAndExtension[1] == fileType:
+                if oldFileExtension.count(".") == 1 and newFileExtension.count(".") == 1:
+                    os.rename(fileNameAndExtension[0] + oldFileExtension, fileNameAndExtension[0] + newFileExtension)
+                else:
+                    FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
+                    FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
+                    break
+            FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension + "\n")
+            FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension + "\n")
+        FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.DISABLED)
+        FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.DISABLED)
 
 # this clearUIButtonFunctionality() function clears the UI when the appropriate button is clicked.
 
