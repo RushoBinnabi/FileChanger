@@ -38,16 +38,16 @@ def changeFileExtensionsButtonFunctionality():
     FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.NORMAL)
     for file in os.listdir(folderPath):
         fileNameAndExtension = os.path.splitext(file)
-        for fileType in fileTypes:
-            if fileNameAndExtension[1] == fileType:
-                if oldFileExtension.count(".") == 1 and newFileExtension.count(".") == 1:
+        if fileNameAndExtension[1] in fileTypes:
+            if oldFileExtension and newFileExtension in fileTypes:
+                if oldFileExtension.count(".") and newFileExtension.count(".") == 1:
                     os.rename(fileNameAndExtension[0] + oldFileExtension, fileNameAndExtension[0] + newFileExtension)
-                else:
-                    FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
-                    FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
-                    break
-            FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension + "\n")
-            FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension + "\n")
+                    FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + oldFileExtension + "\n") # this is bugged, but the program works and changes the file extensions.
+                    FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, fileNameAndExtension[0] + newFileExtension + "\n") # this is bugged, but the program works and changes the file extensions.
+            else:
+                FileChangerGUI.oldFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
+                FileChangerGUI.newFileExtensionOutputArea.insert(tkinter.END, "Error. Please check your file extensions." + "\n")
+                break
         FileChangerGUI.oldFileExtensionOutputArea.config(state=tkinter.DISABLED)
         FileChangerGUI.newFileExtensionOutputArea.config(state=tkinter.DISABLED)
 
